@@ -52,7 +52,7 @@ const App = () => {
       >
         <input
           type="text"
-          placeholder="28777, Bremen, Europa"
+          placeholder="46011, Valencia, Spain"
           value={value}
           onChange={(event_) => {
             setValue(event_.target.value);
@@ -73,7 +73,7 @@ const App = () => {
           </p>
         </>
       ) : (
-        <p>search for your weather</p>
+        <p>What's the weather like?</p>
       )}
     </>
   );
