@@ -34,15 +34,19 @@ const dateBuilder = (d) => {
   return `${day} ${date} ${month} ${year}`;
 };
 
+ 
+
 const App = () => {
-  const key = process.env.WEATHER_KEY;
+ 
+  const key = process.env.NEXT_PUBLIC_WEATHER_KEY;
+
   const [value, setValue] = useState("");
   const base = useStore((state) => state.base);
   const searchWeather = useStore((state) => state.searchWeather);
   const weather = useStore((state) => state.weather);
 
   return (
-    <>
+    <><h1>What's the weather like?</h1>
       <form
         onSubmit={(event_) => {
           event_.preventDefault();
@@ -73,7 +77,7 @@ const App = () => {
           </p>
         </>
       ) : (
-        <p>What's the weather like?</p>
+        <p>Where are you now?</p>
       )}
     </>
   );
