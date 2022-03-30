@@ -1,29 +1,30 @@
 import React, { useState } from "react";
 import useStore from "./useStore";
+import Image from "next/image";
 
 const dateBuilder = (d) => {
   let months = [
-    "Januar",
-    "Februar",
-    "März",
+    "January",
+    "February",
+    "March",
     "April",
-    "Mai",
-    "Juni",
-    "Juli",
+    "May",
+    "June",
+    "July",
     "August",
     "September",
-    "Oktober",
+    "October",
     "November",
-    "Dezember"
+    "December"
   ];
   let days = [
-    "Sonntag",
-    "Montag",
-    "Dienstag",
-    "Mittwoch",
-    "Donnerstag",
-    "Freitag",
-    "Samstag"
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
   ];
 
   let day = days[d.getDay()];
@@ -46,7 +47,7 @@ const App = () => {
   const weather = useStore((state) => state.weather);
 
   return (
-    <><h1>What's the weather like?</h1>
+    <><h1>Weather App</h1>
       <form
         onSubmit={(event_) => {
           event_.preventDefault();
@@ -54,6 +55,7 @@ const App = () => {
           setValue("");
         }}
       >
+        <Image src="https://images.unsplash.com/photo-1531324442324-909f6c0394e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="background main" layout="fill"/>
         <input
           type="text"
           placeholder="46011, Valencia, Spain"
@@ -77,7 +79,7 @@ const App = () => {
           </p>
         </>
       ) : (
-        <p>Where are you now?</p>
+        <p>What's the weather like?</p>
       )}
     </>
   );
